@@ -107,6 +107,12 @@ bindsym $mod+Shift+v split h
 # split in vertical orientation
 bindsym $mod+v split v
 
+# resizing of windows
+bindsym $mod+z	exec --no-startup-id ~/.scripts/i3resize left
+bindsym $mod+u	exec --no-startup-id ~/.scripts/i3resize down
+bindsym $mod+i	exec --no-startup-id ~/.scripts/i3resize up
+bindsym $mod+o	exec --no-startup-id ~/.scripts/i3resize right
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -199,11 +205,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # specific workspaces for apps
-for_window [class="Firefox"] move workspace $ws2
-for_window [class="Thunderbird"] move workspace $ws3
+for_window [class="Firefox"] move workspace $ws3
+for_window [class="Thunderbird"] move workspace $ws4
 
-workspace $ws2 gaps inner 0
-workspace $ws2 gaps outer 0
+workspace $ws3 gaps inner 0
+workspace $ws3 gaps outer 0
 
 # special keys
 bindsym XF86AudioMute exec amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
