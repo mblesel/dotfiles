@@ -202,6 +202,7 @@ bindsym $mod+r mode "resize"
 # specific workspaces for apps
 for_window [class="Firefox"] move workspace $ws3
 for_window [class="Thunderbird"] move workspace $ws4
+for_window [class="Gajim"] move workspace $ws4
 
 workspace $ws3 gaps inner 0
 workspace $ws3 gaps outer 0
