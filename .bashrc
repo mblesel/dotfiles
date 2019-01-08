@@ -13,5 +13,9 @@ export PATH="/home/michael/.scripts:$PATH"
 export PATH="/home/michael/Projects/llvm_install/bin:$PATH"
 export LD_LIBRARY_PATH="/home/michael/Projects/llvm_install/lib:$LD_LIBRARY_PATH"
 
+#llvm-lit
+export PATH="/home/michael/Projects/lit:$PATH"
+
+
 #CATO
 export DAS_TOOL_ROOT="/home/michael/Projects/LLVM-Translation-Tool"
