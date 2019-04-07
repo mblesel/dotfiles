@@ -1,8 +1,7 @@
-[[ -f ~/.bashrc]] && . ~/.bashrc
-
 export EDITOR="vim"
-export BROWSER="firefox"
 export TERMINAL="urxvt"
+export BROWSER="firefox"
+export READER="okular"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep i3 || startx
