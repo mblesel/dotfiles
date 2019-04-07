@@ -21,8 +21,18 @@ exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 
 # #---Dropdown Windows---# #
-#  TODO
-
+# General dropdown window traits. The order can matter.
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_dropdownnotes"] resize set 800 1000
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_dropdownnotes"] border pixel 2
+for_window [instance="dropdown_*"] move position center
 
 
 # Set Xresources colors:
@@ -93,6 +103,9 @@ floating_modifier $mod
 bindsym $mod+d exec dmenu_run
 
 # #---Dropdowns---# #
+bindsym $mod+t			exec --no-startup-id ddspawn tmuxdd
+bindsym $mod+c			exec --no-startup-id ddspawn dropdowncalc
+bindsym $mod+n			exec --no-startup-id ddspawn dropdownnotes
 
 # change focus
 bindsym $mod+h focus left
