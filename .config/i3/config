@@ -19,6 +19,12 @@ exec --no-startup-id dunst
 exec --no-startup-id compton -b
 # NetworkManager applet
 exec --no-startup-id nm-applet
+#firefox
+exec firefox
+#thunderbird
+exec thunderbird
+#gajim
+exec gajim
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -88,9 +94,9 @@ bindsym $mod+Return split h exec i3-sensible-terminal
 # split horizontal
 bindsym $mod+Shift+Return split v exec i3-sensible-terminal
 # same dir vertical
-bindsym $mod+Ctrl+Return split h exec i3-sensible-terminal
+bindsym $mod+BackSpace split h exec samedir
 # same dir horizontal
-bindsym $mod+Ctrl+Shift+Return split v exec i3-sensible-terminal
+bindsym $mod+Shift+BackSpace split v exec samedir
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -101,8 +107,11 @@ bindsym $mod+Tab workspace back_and_forth
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start dmenu (a program launcher)
+# start dmenu 
 bindsym $mod+d exec dmenu_run
+
+# start ranger
+bindsym $mod+r exec $term -e ranger
 
 # #---Dropdowns---# #
 bindsym $mod+t			exec --no-startup-id ddspawn tmuxdd
@@ -200,6 +209,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="Firefox"] move workspace $ws4
 for_window [class="Thunderbird"] move workspace $ws5
 for_window [class="Gajim"] [title="Gajim"] move workspace $ws5 resize set width 400
+for_window [class="Gajim"] [title="Gajim"] resize set width 400
 for_window [class="Gajim"] [title="^.* - Gajim"] floating toggle move workspace $ws5
 workspace $ws4 gaps inner 0
 workspace $ws4 gaps outer 0

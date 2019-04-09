@@ -6,9 +6,17 @@ export TERMINAL="urxvt"
 export BROWSER="firefox"
 export READER="okular"
 
+# ls aliases
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -la --color=auto'
+
+# general shortcuts
+alias open='xdg-open'
+
+# cp aliases for template files
+alias cptexa='cp /home/michael/Documents/templates/latex/artcl/artcl.tex'
+
 PS1='[\u@\h \W]\$ '
 
 # load spack
