@@ -110,6 +110,8 @@ floating_modifier $mod
 # start dmenu 
 bindsym $mod+d exec dmenu_run
 
+bindsym $mod+dead_circumflex exec dmenuunicode
+
 # start ranger
 bindsym $mod+r exec $term -e ranger
 
