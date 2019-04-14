@@ -76,6 +76,10 @@ nmap <leader>q :nohlsearch<CR>
 "
 let mapleader=","
 
+" clipboard copy/paste
+vnoremap <C-c> "*y :let @+=@*<CR>
+map <C-v> "+P
+
 "vim-airline
 set laststatus=2
 
