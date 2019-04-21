@@ -17,6 +17,8 @@ alias cptexa='cp /home/michael/Documents/templates/latex/artcl/artcl.tex'
 
 PS1='[\u@\h \W]\$ '
 
+source /usr/share/doc/pkgfile/command-not-found.bash 
+
 # load spack
 source ~/Projects/spack/share/spack/setup-env.sh
 
