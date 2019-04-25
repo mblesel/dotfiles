@@ -210,8 +210,8 @@ bindsym $mod+Shift+e exec i3exit
 # specific workspaces for apps
 for_window [class="Firefox"] move workspace $ws4
 for_window [class="Thunderbird"] move workspace $ws5
-for_window [class="Gajim"] [title="Gajim"] move workspace $ws5 resize set width 400
-for_window [class="Gajim"] [title="Gajim"] resize set width 400
+for_window [class="Gajim"] [title="Gajim"] move workspace $ws5 resize set width 360
+#for_window [class="Gajim"] [title="Gajim"] resize set width 400
 for_window [class="Gajim"] [title="^.* - Gajim"] floating toggle move workspace $ws5
 workspace $ws4 gaps inner 0
 workspace $ws4 gaps outer 0

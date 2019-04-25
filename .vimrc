@@ -5,6 +5,7 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
       set t_Co=256
   endif
 
+let fortran_have_tabs=1
 filetype plugin indent on
 syntax on
 
@@ -78,7 +79,7 @@ let mapleader=","
 
 " clipboard copy/paste
 vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-v> "+P
+map <C-i> "+P
 
 "vim-airline
 set laststatus=2
