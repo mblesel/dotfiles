@@ -107,6 +107,9 @@ bindsym $mod+Tab workspace back_and_forth
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Set transparency script
+bindsym $mod+b exec --no-startup-id transparency
+
 # start dmenu 
 bindsym $mod+d exec dmenu_run
 
@@ -114,6 +117,9 @@ bindsym $mod+dead_circumflex exec --no-startup-id  dmenuunicode
 
 # start ranger
 bindsym $mod+r exec $term -e ranger
+
+# Screenshot
+bindsym $mod+s exec screenshot
 
 # #---Dropdowns---# #
 bindsym $mod+t			exec --no-startup-id ddspawn tmuxdd
@@ -123,6 +129,9 @@ bindsym $mod+Shift+n	exec --no-startup-id ddspawn dropdowntmpnotes
 #Hide scratchpad
 bindsym $mod+q		    scratchpad show
 
+# Change gaps
+bindsym $mod+g gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+g gaps inner current set 10; gaps outer current set 10
 
 # change focus
 bindsym $mod+h focus left
@@ -209,10 +218,13 @@ bindsym $mod+Shift+e exec i3exit
 
 # specific workspaces for apps
 for_window [class="Firefox"] move workspace $ws4
+
 for_window [class="Thunderbird"] move workspace $ws5
+
 for_window [class="Gajim"] [title="Gajim"] move workspace $ws5 resize set width 360
 #for_window [class="Gajim"] [title="Gajim"] resize set width 400
 for_window [class="Gajim"] [title="^.* - Gajim"] floating toggle move workspace $ws5
+
 workspace $ws4 gaps inner 0
 workspace $ws4 gaps outer 0
 

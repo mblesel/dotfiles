@@ -1,0 +1,11 @@
+#!/bin/bash
+
+VAL=$(echo -e "0\n180\n255" | dmenu -p "Transparency [0-255]")
+
+if [ -z $VAL ] || [ $VAL -lt 0 ] || [ $VAL -gt 255 ]; then
+    echo "You have to set a transparency between (0-255)"
+    VAL=180
+fi
+
+sed -i "s/st.alpha: .*/st.alpha: $VAL/g" ~/.Xresources
+xrdb ~/.Xresources
