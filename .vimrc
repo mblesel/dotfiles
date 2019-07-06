@@ -6,8 +6,11 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   endif
 
 let fortran_have_tabs=1
+
 filetype plugin indent on
 syntax on
+
+let mapleader=","
 
 "
 "colorschme stuff
@@ -37,7 +40,7 @@ highlight LineNr ctermfg=grey
 set hidden " Leave hidden buffers open  
 set history=100 "by default Vim saves your last 8 commands.  We can handle more  
 set number relativenumber 	"Linenumbers
-set nu rnu
+set nu rnu "Relative linenumbers
 
 "No Swapfiles 
 set noswapfile
@@ -69,25 +72,54 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-nmap <leader>q :nohlsearch<CR>
-
 
 "
-"key mappings
+" General key mappings
 "
-let mapleader=","
 
 " clipboard copy/paste
-vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-i> "+P
+vnoremap <C-c> "+y
+map <C-b> "+p
+
+" Clear search highlighting
+nmap <leader>q :nohlsearch<CR>
+
+" Buffer stuff
+"Open new empty buffer
+nmap <leader>t :enew<CR> 
+" Move between buffers
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bnext<CR>
+
+
+" Split stuff
+" Move between splits
+nnoremap <C-H> <C-W><C-H> 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+" Change default placement of new created splits
+set splitbelow
+set splitright
+
+
+"
+" Plugins
+"
 
 "vim-airline
-set laststatus=2
+set laststatus=2 "Always show status line
+let g:airline#extensions#tabline#enabled = 1 "Top bar with buffer list
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = '|'
 
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 "CtrlP
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nmap ; :CtrlPBuffer<CR>
