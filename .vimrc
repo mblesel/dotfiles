@@ -73,6 +73,8 @@ set ignorecase
 set smartcase
 set hlsearch
 
+set updatetime=500
+
 "
 " General key mappings
 "
@@ -90,8 +92,8 @@ nmap <leader>t :enew<CR>
 " Move between buffers
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bnext<CR>
+"nnoremap <Tab> :bnext<CR>
+"nnoremap <S-Tab> :bnext<CR>
 
 
 " Split stuff
@@ -100,6 +102,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
 " Change default placement of new created splits
 set splitbelow
 set splitright
@@ -118,8 +123,20 @@ let g:airline#extensions#tabline#left_sep = '|'
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+
 "CtrlP
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nmap ; :CtrlPBuffer<CR>
+
+
+"CurtineIncSw (Switch header/src file)
+nnoremap <F5> :call CurtineIncSw()<CR>
+
+"YouCompleteMe
+let g:ycm_server_python_interpreter = 'python2'
+let g:ycm_global_ycm_extra_conf = '/home/michael/.config/ycm/.ycm_extra_conf.py'
+" GoTo definition / declaration
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jD :YcmCompleter GoToDeclaration<CR>

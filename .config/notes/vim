@@ -1,0 +1,16 @@
+General:
+    <leader>q clear search highlighting
+    <leader>t new buffer
+    <leader>l next buffer
+    <leader>h prev buffer
+
+YCM:
+    <leader>jd Jump to definition
+    <leader>jD Jump to declaration
+    <ctrl-o> jump back in jumplist
+    <ctrl-i> jump forward in jumplist
+
+tcomment:
+    gcc comment out/in line
+    gc in visual  comment out/in selected lines
+
