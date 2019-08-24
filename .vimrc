@@ -119,6 +119,7 @@ set laststatus=2 "Always show status line
 let g:airline#extensions#tabline#enabled = 1 "Top bar with buffer list
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = '|'
+let g:airline#extensions#tabline#show_tabs = 0
 
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
